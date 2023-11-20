@@ -1,14 +1,14 @@
 <template>
-    <modal-window :showModal="modalVisible"></modal-window>
+  <modal-window :showModal="modalVisible" @handle-click="closeModal"></modal-window>
 
-    <header class="header">
-      <div class="wrapper">
-        <div class="header__wrapper">
-          <header-component></header-component>
-          <add-task @handle-click="openModal"></add-task>
-        </div>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header__wrapper">
+        <header-component></header-component>
+        <add-task @handle-click="openModal"></add-task>
       </div>
-    </header>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -31,6 +31,9 @@ export default {
     openModal() {
       this.modalVisible = true;
     },
+    closeModal() {
+      this.modalVisible = false;
+    }
   }
 }
 </script>
@@ -57,14 +60,18 @@ body {
   position: relative;
 }
 
+.wrapper {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
 .header {
   background-color: #363636;
   position: relative;
 }
 
-.wrapper {
-  max-width: 1280px;
-  padding: 0 20px;
-  margin: 0 auto;
+.header__wrapper {
+  padding: 15px 0;
 }
 </style>
