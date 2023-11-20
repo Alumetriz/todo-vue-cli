@@ -8,7 +8,6 @@
 export default {
   methods: {
     handleClick() {
-      console.log('Button emitted');
       this.$emit('handle-click');
     }
   }

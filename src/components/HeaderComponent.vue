@@ -1,44 +1,37 @@
 <template>
-  <header class="header">
-    <div class="wrapper">
-      <div class="header__wrapper">
-        <add-task @handle-click="handleClickFromAddTask"></add-task>
-        <nav class="ul">
-          <ul class="header__nav-outer-list">
-            <li class="left-side">
-              <ul class='header__nav-inner-list'>
-                <header-item
-                    v-for="item in headerItemsLeftSide"
-                    :key="item.id"
-                    :item="item"
-                ></header-item>
-              </ul>
-            </li>
-            <li class="right-side">
-              <ul class='header__nav-inner-list'>
-                <header-item
-                    v-for="item in headerItemsRightSide"
-                    :key="item.id"
-                    :item="item"
-                >
-                </header-item>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+
+  <nav class="ul">
+    <ul class="header__nav-outer-list">
+      <li class="left-side">
+        <ul class='header__nav-inner-list'>
+          <header-item
+              v-for="item in headerItemsLeftSide"
+              :key="item.id"
+              :item="item"
+          ></header-item>
+        </ul>
+      </li>
+      <li class="right-side">
+        <ul class='header__nav-inner-list'>
+          <header-item
+              v-for="item in headerItemsRightSide"
+              :key="item.id"
+              :item="item"
+          >
+          </header-item>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
 </template>
 
 <script>
 import HeaderItem from "@/components/HeaderItem.vue";
-import AddTask from "@/components/AddTask.vue";
 
 export default {
   components: {
     'header-item': HeaderItem,
-    'add-task': AddTask,
   },
   data() {
     return {
@@ -69,9 +62,7 @@ export default {
     }
   },
   methods: {
-    handleClickFromAddTask() {
-      this.$emit('handle-click__from-add-task');
-    }
+
   }
 }
 </script>
