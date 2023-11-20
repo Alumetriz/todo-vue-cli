@@ -1,5 +1,4 @@
 <template>
-  <div id="app">
     <modal-window :showModal="modalVisible"></modal-window>
 
     <header class="header">
@@ -10,7 +9,6 @@
         </div>
       </div>
     </header>
-  </div>
 </template>
 
 <script>
